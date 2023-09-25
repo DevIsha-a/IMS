@@ -1,0 +1,7 @@
+.side-panel {
+  background-color: #48576a;
+  /* background-color: #3b4653; */
+  max-width: 250px;
+  color: white;
+  height: 100vh;
+}

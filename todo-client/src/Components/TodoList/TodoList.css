@@ -1,0 +1,28 @@
+.inp {
+  border: 1px solid black !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+}
+
+.inp:focus {
+  outline: none !important;
+}
+
+.inp::placeholder {
+  color: black !important;
+}
+
+/* .li-border {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.li-border:first-child {
+  border-top: 1px solid black;
+  border-radius: 50% 50% 0px 0px;
+}
+
+.li-border:last-child {
+  border-bottom: 1px solid black;
+  border-radius: 0px 0px 50% 50%;
+} */
