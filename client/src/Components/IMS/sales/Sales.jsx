@@ -16,13 +16,14 @@ const Sales = () => {
     const handlePageChange = ({ selected }) => {
       setCurrentPage(selected);
     };
-   
+   const [loading, setloading] = useState(false)
 useEffect(() => {
 
  const fetchSales=async()=>{
+  setloading(true)
         let resp= await axios.get('http://localhost:5500/api/fetchSalesOrders')
         setsales(resp.data.data)
-
+        setloading(false)
  }
  fetchSales()
 }, [])
@@ -87,11 +88,13 @@ function truncateId(id) {
                   <td className='px-6 py-4'>{sale.buyer}</td>
                 </tr>
               ))
-            ) : (
+            ) :loading? (
               <tr>
                 <td colSpan='5 ml-5'>Loading sales...</td>
               </tr>
-            )}
+            ): <tr>
+            <td colSpan='5 ml-5'>No Sales yet</td>
+          </tr>}
           </tbody>
         </table>
       </div>

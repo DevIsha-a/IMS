@@ -7,8 +7,6 @@ const Products = () => {
       
        <HeaderContainer></HeaderContainer>
        <AllProducts></AllProducts>
-      
-       helo
     </div>
   )
 }

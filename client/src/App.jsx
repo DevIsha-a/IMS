@@ -16,18 +16,18 @@ import Dashboard from './Pages/dashboard/dashboardpage'
 
 function App() {
   return <>
-  
-  <Routes>
-    <Route path='/' element={<UserSignIn/>} />
 
-    <Route path="sign-up" element={<UserSignUp/>} />
-    <Route path="home" element={<Products />} />
-    <Route path="/dashboard" element={<Dashboard />} />
-        {/* <Route path="/products" element={<Products />} /> */}
-     <Route path="/products/add" element={<PurchasePage />} /> 
-        <Route path="/products/sell/:id" element={<SellProductPage/>} />
-        <Route path="/sales" element={<SalesPage />} /> 
-  </Routes>
+    <Routes>
+      <Route path='/' element={<UserSignIn />} />
+
+      <Route path="sign-up" element={<UserSignUp />} />
+      <Route path="home" element={<Products />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/products/add" element={<PurchasePage />} />
+      <Route path="/products/sell/:id" element={<SellProductPage />} />
+      <Route path="/sales" element={<SalesPage />} />
+    </Routes>
   </>
 }
 

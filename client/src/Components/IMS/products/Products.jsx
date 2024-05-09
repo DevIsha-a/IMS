@@ -16,12 +16,13 @@ const AllProducts = () => {
      const [showEditProd, setshowEditProd] = useState(false)
      const [currProd, setcurrProd] = useState('')
      const [products, setProducts] = useState([])
+     const [loading, setloading] = useState(false)
      useEffect(() => {
          const fetchProducts= async ()=>{
+          setloading(true)
              let prods=await axios.get('http://localhost:5500/api/getProducts',{})
              setProducts(prods.data.data)
- 
- 
+             setloading(false)
          }
          fetchProducts()
  
@@ -111,13 +112,17 @@ function truncateId(id) {
           </td>
         </tr>
       ))
-    ) : (
+    ) :loading? (
       <>
         <tr>
           <td colSpan='5 ml-10'>loading products...</td>
         </tr>
       </>
-    )}
+    ): <>
+    <tr>
+      <td colSpan='5 ml-10'>No Products found</td>
+    </tr>
+  </> }
   </tbody>
 </table>
 
